@@ -1,6 +1,13 @@
 <template>
   <div class="header">
-    <h4>{{ webTitle }}</h4>
+    <div class="mainLogo">
+      <h4>{{ webTitle }}</h4>
+      <div class="webNav">
+        <router-link class="nav" to="/">Home</router-link>
+        <router-link class="nav" to="/about">About</router-link>
+        <router-link class="nav" to="/contact">Contact</router-link>
+      </div>
+    </div>
     <input class="searchbox" v-model="kataKunci" placeholder="Cari kelas" />
   </div>
 </template>
@@ -36,10 +43,53 @@ export default {
 
 .searchbox {
   display: inline-block;
+  box-sizing: border-box;
   padding: 8px 16px;
   border-radius: 0.2rem;
   border: none;
   outline: none;
   background: #f0f0f0;
+}
+
+.mainLogo {
+  display: flex;
+  gap: 48px;
+}
+
+.webNav {
+  display: flex;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  cursor: pointer;
+  padding: 0 16px;
+}
+
+.nav:hover {
+  background: lightgray;
+}
+
+a {
+  text-decoration: none;
+  color: #2c3e50;
+}
+
+a:active {
+  text-decoration: none;
+  color: #2c3e50;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #2c3e50;
+}
+
+.router-link-active {
+  text-decoration: none;
+  background: lightgrey;
 }
 </style>

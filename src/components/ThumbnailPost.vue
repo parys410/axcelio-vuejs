@@ -8,7 +8,7 @@
       }"
     ></div>
     <div class="info">
-      <h4>{{ data.title }}</h4>
+      <h4 @click="viewDetail(data.slug)">{{ data.title }}</h4>
       <p>{{ data.description }}</p>
       <h5>{{ data.harga }}</h5>
     </div>
@@ -51,6 +51,14 @@ export default {
     pesanSekarang(title) {
       window.alert(`Sukses mendaftar ${title}`);
       this.statusPesan = false;
+    },
+    viewDetail(id) {
+      this.$router.push({
+        name: "DetailPost",
+        params: {
+          slug: id,
+        },
+      });
     },
   },
   beforeUpdate() {
